@@ -1,0 +1,176 @@
+\documentclass[11pt]{article}    
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd}
+\usepackage{amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lmodern}
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray
+}                      
+
+
+\usepackage{xypic}
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\usepackage{esint}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[none]{hyphenat}
+\setcounter{tocdepth}{3}
+\usepackage{eucal} 
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+\renewcommand{\abstractname}{\vspace{-\baselineskip}}
+
+
+
+
+\textwidth=6in
+\textheight=9in
+\hoffset=-0.375in
+\voffset=-0.75in
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
+\newtheorem{remark}{Remark}
+\newtheorem{claim}{Claim}
+\newtheorem{proposition}{Proposition}[subsection]
+\newtheorem{example}{Example}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{problem}{Problem}[subsection]
+\newtheorem{assumption}{Assumption}[subsection]
+\newtheorem{condition}{Condition}[subsection]
+\newtheorem{introdefinition}{Definition}
+\newtheorem{alternatedefinition}{Alternate Definition}[subsection]
+
+
+\numberwithin{equation}{section}
+
+
+
+
+
+
+\makeatletter
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+\makeatother
+
+
+\newcommand*{\TitleFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{14}{14}%
+      \selectfont}
+\newcommand*{\AuthorFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{12}{12}%
+      \selectfont}
+
+
+
+
+\newcommand{\kbar}
+{\mathchar'26\mkern-9mu k}
+
+\newcommand{\ebar}
+{\mathchar'26\mkern-9mu \theta_0}
+
+\newcommand{\ebarblue}
+{\mathchar'26\mkern-9mu \textcolor{blue}{\theta_0}}
+
+
+
+
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\R}{\mathbb{R}}
+\DeclareMathOperator*{\N}{\mathbb{N}}
+\DeclareMathOperator*{\Q}{\mathbb{Q}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator*{\C}{\mathbb{C}}
+\DeclareMathOperator*{\A}{\mathbb{A}}
+\DeclareMathOperator*{\expp}{\text{exp}}
+\DeclareMathOperator*{\lt}{L_{\bullet}}
+\DeclareMathOperator*{\roc}{\rotatebox[origin=c]{180}{c}}
+\DeclareMathOperator*{\rok}{\rotatebox[origin=c]{180}{$k$}}
+\DeclareMathOperator*{\boldv}{\boldsymbol{v}}
+\DeclareMathOperator*{\hbarbrown}{\textcolor{brown}{\hbar}}
+\DeclareMathOperator*{\e}{\textcolor{purple}{\theta_0_1}}
+\DeclareMathOperator*{\ee}{\textcolor{purple}{\theta_0_2}}
+\DeclareMathOperator*{\ered}{\textcolor{red}{--\theta_0_1 \theta_0_2}}
+\DeclareMathOperator*{\eblue}{\textcolor{blue}{\theta_0_1 + \theta_0_2}}
+\DeclareMathOperator*{\eebrown}{\textcolor{brown}{-- \theta_0}}
+\DeclareMathOperator*{\ebrown}{\textcolor{brown}{\theta_0}}
+\DeclareMathOperator*{\eebrownlevel}{\textcolor{brown}{\theta_0^2}}
+\DeclareMathOperator*{\tealN}{\textit{\textcolor{teal}{N}}}
+\DeclareMathOperator*{\bluenoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\pinknoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\uniform}{\boldsymbol{\rho}_{\star | \mathbb{T}}}
+\DeclareMathOperator*{\vcurrent}{\widehat{\textit{\textbf{v}}}}
+\newcommand{\dbar}
+{\mathchar'26\mkern-9mu \theta_0}
+ \setcounter{section}{0}
+ 
+\begin{document}
+
+
+
+\hypersetup{linkcolor=black}
+
+\begin{center} 
+\textbf{{MATH 112: \underline{Introduction to Analysis}}}\\
+\textbf{{Fall 2025 Semester}}\\
+\textbf{{Homework \textcolor{black}{1}: Due \textcolor{black}{Tuesday} \textcolor{black}{September} \textcolor{black}{09}, 10:00am PST.}}\\
+ \end{center}
+
+ \noindent \textbf{Instructions}
+ \begin{itemize}
+ \itemsep0em
+ \item Write your full name, ``Homework \textcolor{black}{1}'', and the date at the top of the first page.
+ \item Show all work and explain your reasoning.  Write in complete sentences.
+ \item Typeset your solutions in LaTeX \textit{or, for HW1 only, you may submit a scanned .pdf}.
+ \item Each question has multiple parts. Box your final answers.
+ \item \underline{Submit a single .pdf file to Gradescope under the assignment ``Homework \textcolor{black}{1}''.}
+ \item \underline{You must use Gradescope to electronically match problems to pages in your .pdf}
+ \item Questions? Email me or come to office hours (see Moodle).
+ \item You are strongly encouraged to work together!  Just write up your own solutions.\\
+ \end{itemize}
+ \noindent \textbf{Assignment} (2 Problems: 50 + 50 = 100 points total.) \\
+  $ \ $\\
+   \noindent $\square$ \textbf{Problem 1}  [\textsf{Logic and $\mathbb{D}$}]. In \textsf{L0}, we encountered the finite set $\mathbb{D} = \{0,1,2,3,4,5,6,7,8,9\}$ of digits in base $10$.  Using $d$ as symbol to denote an element of $\mathbb{D}$, consider the predicates \begin{eqnarray} P(d) &=& \textnormal{``$|d-5| \leq 2$''} \nonumber \\ Q(d) &=& \textnormal{``$|d-2| \leq 5$''}  \nonumber \end{eqnarray}
+   
+   \noindent where $|x|$ is absolute value.  \textit{Careful: if $x$ is a real number, $x$ is not a set, so the notation ``$|x|$'' refers to ``the absolute value of $x$'' and cannot possibly mean ``the cardinality of $x$''.} Determine the truth value of each of the following propositions.
+  \begin{itemize}
+  \itemsep0em 
+   \item 1.1 [10 points] $P(3) \land (P(2) \lor P(1))$ 
+   \item 1.2 [10 points] $\neg \big (P(3) \Rightarrow Q(3) \big )$
+   \item 1.3 [10 points] $\exists d \in \mathbb{D} \ P(d)$ 
+   \item 1.4 [10 points] $\forall d \in \mathbb{D} \ P(d)$
+   \item 1.5 [10 points]  $\forall d \in \mathbb{D} \ \big ( P(d) \Rightarrow Q(d) \big )$.\\
+\end{itemize}
+
+ 
+    \noindent $\square$ \textbf{Problem 2}  [\textsf{Logic and $\mathbb{N}$}] In \textsf{L0}, we encountered the infinite set of natural numbers $\mathbb{N} = \{0,1,2,3,4,5,6,7,8,9,10,11, 12, 13, \ldots\}$.  For each $k \in \mathbb{N}$, consider the truth set $$A_{k} = \{n \in \mathbb{N} \ : \ k \leq n\}$$
+    
+\noindent To prove $a \in A_k$, you have to verify $k \leq a$.  Prove each of the following propositions.  \begin{itemize}
+  \itemsep0em 
+  \item 2.1 [10 points] $\exists \ell \in \mathbb{N} \ \ell  \in A_7$
+  \item 2.2 [10 points] $\exists \ell \in \mathbb{N} \ 7  \in A_{\ell}$
+\item 2.3 [10 points] $\neg \big (| \mathbb{N} \setminus A_{10} | = 9 \big )$. \textit{Careful: if $S$ is a set, $|S|$ is the cardinality of $S$} 
+\item 2.4 [10 points] $\forall m \in \mathbb{N} \ 2m+1 \in A_m$
+\item 2.5 [10 points] $\forall m \in \mathbb{N} \ \big (m \in A_{112} \Rightarrow m \in A_{111} \big )$\\
+
+ \end{itemize}
+
+
+    
+\noindent $\square$ \textbf{Bonus} [X points] Is $\forall n \in \mathbb{Z}_+ \ \Bigg ( \exists q \in \mathbb{Q} \ \Big( (0< q) \land (q <  \frac{1}{n} ) \Big ) \Bigg )$ true or false? Explain. \end{document}

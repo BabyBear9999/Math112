@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}    
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd}
+\usepackage{amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lmodern}
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray
+}                      
+
+
+\usepackage{xypic}
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\usepackage{esint}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[none]{hyphenat}
+\setcounter{tocdepth}{3}
+\usepackage{eucal} 
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+\renewcommand{\abstractname}{\vspace{-\baselineskip}}
+
+
+
+
+\textwidth=6in
+\textheight=9in
+\hoffset=-0.375in
+\voffset=-0.75in
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
+\newtheorem{remark}{Remark}
+\newtheorem{claim}{Claim}
+\newtheorem{proposition}{Proposition}[subsection]
+\newtheorem{example}{Example}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{problem}{Problem}[subsection]
+\newtheorem{assumption}{Assumption}[subsection]
+\newtheorem{condition}{Condition}[subsection]
+\newtheorem{introdefinition}{Definition}
+\newtheorem{alternatedefinition}{Alternate Definition}[subsection]
+
+
+\numberwithin{equation}{section}
+
+
+
+
+
+
+\makeatletter
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+\makeatother
+
+
+\newcommand*{\TitleFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{14}{14}%
+      \selectfont}
+\newcommand*{\AuthorFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{12}{12}%
+      \selectfont}
+
+
+
+
+\newcommand{\kbar}
+{\mathchar'26\mkern-9mu k}
+
+\newcommand{\ebar}
+{\mathchar'26\mkern-9mu \theta_0}
+
+\newcommand{\ebarblue}
+{\mathchar'26\mkern-9mu \textcolor{blue}{\theta_0}}
+
+
+
+
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\R}{\mathbb{R}}
+\DeclareMathOperator*{\N}{\mathbb{N}}
+\DeclareMathOperator*{\Q}{\mathbb{Q}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator*{\C}{\mathbb{C}}
+\DeclareMathOperator*{\A}{\mathbb{A}}
+\DeclareMathOperator*{\expp}{\text{exp}}
+\DeclareMathOperator*{\lt}{L_{\bullet}}
+\DeclareMathOperator*{\roc}{\rotatebox[origin=c]{180}{c}}
+\DeclareMathOperator*{\rok}{\rotatebox[origin=c]{180}{$k$}}
+\DeclareMathOperator*{\boldv}{\boldsymbol{v}}
+\DeclareMathOperator*{\hbarbrown}{\textcolor{brown}{\hbar}}
+\DeclareMathOperator*{\e}{\textcolor{purple}{\theta_0_1}}
+\DeclareMathOperator*{\ee}{\textcolor{purple}{\theta_0_2}}
+\DeclareMathOperator*{\ered}{\textcolor{red}{--\theta_0_1 \theta_0_2}}
+\DeclareMathOperator*{\eblue}{\textcolor{blue}{\theta_0_1 + \theta_0_2}}
+\DeclareMathOperator*{\eebrown}{\textcolor{brown}{-- \theta_0}}
+\DeclareMathOperator*{\ebrown}{\textcolor{brown}{\theta_0}}
+\DeclareMathOperator*{\eebrownlevel}{\textcolor{brown}{\theta_0^2}}
+\DeclareMathOperator*{\tealN}{\textit{\textcolor{teal}{N}}}
+\DeclareMathOperator*{\bluenoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\pinknoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\uniform}{\boldsymbol{\rho}_{\star | \mathbb{T}}}
+\DeclareMathOperator*{\vcurrent}{\widehat{\textit{\textbf{v}}}}
+\newcommand{\dbar}
+{\mathchar'26\mkern-9mu \theta_0}
+ \setcounter{section}{0}
+ 
+\begin{document}
+
+
+
+\hypersetup{linkcolor=black}
+
+\begin{center} 
+\textbf{{MATH 112: \underline{Introduction to Analysis}}}\\
+\textbf{{Fall 2025 Semester}}\\
+\textbf{{Writing Activity I: Due \textcolor{black}{Thursday} \textcolor{black}{September} \textcolor{black}{04}, 10:00am PST.}}\\
+ \end{center}
+ $ \ $\\
+ \noindent \textbf{Instructions:}
+ \begin{itemize}
+ \itemsep0em
+ \item Write your full name, ``Writing Activity I'', and the date at the top of the page.
+ \item Write, to the best of your ability, a thorough solution to the problems below.
+ \item Copy the problem statements before beginning each solution.
+ \item Show all work and explain your reasoning.  Write in complete sentences.
+ \item Bring a hand-written or printed copy of your written solution to class.
+ \item In addition to printing your work, submit a scanned .pdf file of your work to Gradescope under the assignment ``Writing Activity I''.  It is important that you (i) do not submit an image file and (ii) that you \underline{connect problems to pages in the submission process}.  This last item (ii) is very important going forward, so I want to be sure you can do it.
+ \item Finally, note: \underline{{the deadline for Gradescope submission is 10:00am, not 10:30am.}}
+ \item Optional: go through the short video tutorial linked in the syllabus to learn how to type up your mathematical writing in LaTeX using Overleaf and type up your solutions.  This is slow at first, but pretty soon it saves you a lot of time.  Plus, you have to learn how to do this for Homework 2 anyway, so you might as well do it early.
+ \end{itemize}
+ 
+ $ \ $\\
+
+    \noindent $\square$ \textbf{Problem 1} \textsf{[Arithmetic]} Simplify
+    \begin{equation} n=(1+1)^{1-1} \times (10)^{1+1} + (1-1)^{1+1} \times (10)^{1 \times 1}  \nonumber \end{equation} 
+ 
+ \noindent and then evaluate $(-1)^n$.\\
+$ \ $\\
+$ \ $\\
+    \noindent $\square$ \textbf{Problem 2} \textsf{[Algebra and Geometry]} Find a point on the line $y = x$ in the Cartesian plane that is distance $5$ from the point $(2,1)$ and whose $x$-coordinate is positive.
+
+ $ \ $\\
+ 
+ \noindent $\square$ \textbf{Problem 3} \textsf{[Optional]} Share any thoughts or questions you'd like about the readings:
+ {
+ \begin{center}
+ \begin{tabular}{ l r l }
+\textsf{IA} & Preface: & Calculus and infinitesimals \\ 
+\textsf{L0} & Paradoxes: & Decimal expansions and the continuum \\
+\textsf{L1} & Sets I: & Cardinalities, enumerations, and operations \\
+\ & \ & \\
+\hline
+\ & \ & \\
+
+ \textsf{IMP} & Preface: & The pattern of what we already know\\
+\textsf{P0} & Paradoxes: & Logical processes and machines\\
+\textsf{P1}  &  Propositions: & Truth values, negation, and connectives
+\end{tabular} \end{center}}
+
+ 
+ 
+ \end{document}
