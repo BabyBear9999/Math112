@@ -30,23 +30,65 @@
 
 	%solution goes here%
 \begin{enumerate}[1)]
-	\item  
-		%sol'n% 
-		$$P(3) \land (P(2) \lor P(1))$$
-		$$(|3-5| \leq 2) \land \Big((|2-2| \leq 2) \lor (|1-5| \leq 2) \Big) $$
-		$$(2 \leq 2) \land \Big( ( 0 \leq 2) \lor (4 \leq 2) \Big)$$
-		$$(True) \land ( True \lor False) $$
-		%$$True and (True or False)$$
-		$$True \land (True)  $$
-		$$True$$
 	\item
 		%sol'n% 
+    \begin{align*}
+          &P(3) \land (P(2) \lor P(1)) \\
+          &= ( |3-5| \leq 2) \land \Big((|2-2| \leq 2) \lor (|1-5| \leq 2) \Big) \\
+          &= (2 \leq 2) \land \Big( ( 0 \leq 2) \lor (4 \leq 2) \Big) \\
+          &=(True) \land ( True \lor False) \\
+          &=True \land (True) \\
+          &=True
+    \end{align*}
 	\item
 		%sol'n%
+    \begin{align*}
+      \neg \big( P(3) \Rightarrow Q(3) \big)\\
+      &= \neg \big( (|3-5| \leq 2) \Rightarrow (|3-2| \leq 5) \big)\\
+      &= \neg \big( (2 \leq 2) \Rightarrow (1 \leq 5) \big)\\
+      &= \neg \big( True \Rightarrow True \big)\\
+      &= \neg (True) \\
+      &= False
+    \end{align*}
 	\item 
 		%sol'n%
+    \begin{align*}
+      \exists d \in \mathbb{D} P(d)\\
+      &= \exists d \in \mathbb{d} |d-5| \leq 2 \\
+    \end{align*}
+    you can also write this as: \\
+    there exists a number d in the set of digits such that $|d-5| \leq 2$\\
+    this statement is true because: \\
+   let d = 4
+    $$|d-5| = |4-5|$$
+    $$1 \leq 2$$
+   this makes the stament $True$
 	\item           
 		%sol'n%  
+    %$\forall d \in \mathbb{D} \ P(d)$
+
+    \begin{align*}
+      \forall d \in \mathbb{D} \ P(d) \\
+      &= \forall d \in \mathbb{D} \ |d-5| \leq 2
+    \end{align*}
+    let $d = 1$ 
+    $$|1-5| = 4$$
+    $$4 \leq 2$$
+    since $4 > 2$ this statment is $False$
+  \item
+    \begin{align*}
+      \forall d \in \mathbb{D} \ \big ( P(d) \Rightarrow Q(d) \big ) \\
+      &= \forall d \in \mathbb{D} \big ( |d - 5| \leq 2 \Rightarrow |d-2| \leq 5)
+    \end{align*}
+        %just do it all you nerd
+        let $d=0$ 
+        \begin{align*}
+          |0-5| \leq 2 \Rightarrow |0-2| \leq 5 &= 5 \leq 2 \Rightarrow 2\leq 5 \\
+                                                &= False \Rightarrow True \\
+                                                &= False
+      \end{align*}
+        
+
 \end{enumerate}
  
 
@@ -72,17 +114,44 @@
 \begin{enumerate}[1)]
 		\item  
 			%sol'n% 
+      
+       $$ \exists \ell \in \mathbb{N} \ \ell  \in A_7 \\$$
+       $$ A_7 = \{0,1,2,3,4,5,6,7\} $$
+       let $\ell = 2$
+       $$ 2 \in \mathbb{N} \land 2 \in A_7 $$
+
+    
 
 		\item
 			%sol'n% 
-
+     $$\exists \ell \in \mathbb{N} \ 7 \in A_{\ell}$$ 
+      let $\ell = 7$ 
+      $$7 \in \mathbb{N}$$
+      $$7 \leq 7 \Rightarrow 7 \in A_7$$
+      therefore: $7 \in \mathbb{N} \ 7 \in A_7$
+      
 		\item 
+
 			%sol'n% 
+      $$\neg \big (| \mathbb{N} \setminus A_{10} | = 9 \big )$$
+      $$\mathbb{N} \setminus A_{10} = \{ 0,1,2,3,4,5,6,7,8,9,10 \} $$
+      $$|\mathbb{N} \setminus A_{10}| = 11$$
+      $$\neg \big( 10 = 9 \big )$$
+      $$\neg False = True$$
 
 		\item 
 			%sol'n%		
+      $$\forall m \in \mathbb{N} \ 2m+1 \in A_m$$
+      $$A_m = \{1,2,3,...,m\}$$
+      since $m +1 > m$, $m+1 \notin A_m$ b/c m is the largest element of $A_m$ 
+
 		\item 
 			%sol'n%  
+      $$\forall m \in \mathbb{N} \ \big (m \in A_{112} \Rightarrow m \in A_{111} \big )$$
+      $$A_{112} = \{1,2,3,...,111,112\}$$
+       $$A_{111} = \{1,2,3,...,111\}$$
+     since all elements of $A_{111}$ are in $A_{112}$ if an element is in $A_{111}$ it implies that that same element is also in $A_{112}$
+
 	\end{enumerate}
 
 \newpage
