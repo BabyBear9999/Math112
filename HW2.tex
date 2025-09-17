@@ -1,0 +1,250 @@
+\documentclass[11pt,twoside]{amsart}
+\usepackage{amssymb, amsmath, enumerate, palatino, hyperref}
+\usepackage{mathrsfs}
+
+
+
+\newtheorem{prob}{Problem}
+
+\title {Micheal Bear, HW2, 9/13/25} 
+
+\begin{document}
+	\maketitle	
+
+
+  \noindent $\square$ \textbf{Problem 1}  
+  [\textsf{Cartesian Products and Solution Sets}] In our preliminary \textsf{L0}, we encountered the \textit{digit set} $\mathbb{D} = \{0,1,2,3,4,5,6,7,8,9\}$ commonly used to express numbers in base $10$. Alternatively, the \textit{bit set} $\mathbb{B} = \{0,1\}$ from \textsf{L3} can be used to express numbers in base $2$.  Note: $| \mathbb{B} | = 2$.  The set of \textit{bit strings of length $3$} is the set of  $3$-tuples as defined in \textsf{L3}: 
+  \begin{align*} 
+  \mathbb{B}^3 &= \{0,1\}^3 \nonumber \\ 
+               &=\Big  \{ (b_1, b_2, b_3) \ :  \ b_1 \in \{0,1\}  \land b_2 \in \{0,1\} \land b_3 \in \{0,1\}\Big \} \nonumber \\ 
+               &= \Big \{ (0,0,0), (0,0,1), (0,1,0),(0,1,1),(1,0,0),(1,0,1),(1,1,0),(1,1,1) \Big \} \nonumber
+  \end{align*}  
+with $| \mathbb{B}^3|=2^3=8$.  For each set below (i) present it explicitly and (ii) find its cardinality.
+
+  \begin{itemize} 
+    \itemsep0em 
+    \item 1.1 [5 points] $W = \{ (b_1, b_2, b_3) \in  \mathbb{B}^3 \ : \ b_1 = 0 \}$
+    \item 1.2 [5 points]  $Y = \{ (b_1, b_2, b_3) \in  \mathbb{B}^3 \ : \ b_1 + b_2 + b_3  = 2 \}$
+    \item 1.3 [5 points] $W \cap Y$
+    \item 1.4 [5 points] $(W \cup Y) \cap W$
+    \item 1.5 [5 points] $(W \cap Y) \cup W$
+  \end{itemize}
+\bigskip
+\emph{solution}
+	%solution goes here%
+\begin{enumerate}[1.]
+     \item
+       \begin{enumerate}[i)]
+         \item
+           the set of bit strings for which the first element is 0 is:
+    \begin{center} \boxed{ $$W  = \big\{ (0,0,0) ,(0,0,1), (0,1,0),(0,1,1) \big\} $$} \end{center}
+         \item
+           $|W| = 4$ 
+           \bigskip
+       \end{enumerate}
+     \item
+       \begin{enumerate}[i)]
+          \item
+            the set of bit strings for which b1, b2, and b3, add up to 2: 
+            \begin{center} \boxed{$$Y = \{ (0,1,1),(1,0,1),(1,1,0) \}$$} \end{center}
+            
+          \item
+            $|Y| = 3$
+            \bigskip
+        \end{enumerate}
+     \item
+        \begin{enumerate}[i)]
+          \item
+          the set of bit strings in the intersection of W and Y, or the set containing the bit strings that exisit in both the set W and the set Y:
+     \begin{center} \boxed{ $$W \cap Y = {(0,1,1)}$$} \end{center}
+          \bigskip
+          \item
+            \boxed{$$|W\cap Y| = 1$$} 
+            \newpage
+          \end{enumerate}
+      
+     \item
+        \begin{enumerate}[i)]
+           \item
+             the set of bitstrings in the union of W and Y is:
+             $$W\cup Y = \{ (0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,1), (1,1,0)\}$$
+             the set of bit strings in $(W\cup Y) \cap W$ is the set of bit strings in $W \cup Y$ and in W:
+             $$(W \cup Y)\cap W = \{ (0,0,0), (0,0,1), (0,1,0),(0,1,1)\}$$
+             since this containes all values of W and only values of W, this is equal to W
+    \begin{center} \boxed{$$(W \cup Y) \cap W = W$$} \end{center}
+
+           \item
+             \boxed{$$|(W\cup Y) \cap W|=4$$}
+             \bigskip
+         \end{enumerate}
+     \item
+        \begin{enumerate}[i)]
+           \item
+             as shown above:
+             $$W \cap Y = \{(0,1,1\}$$
+             the set of bit strings in $(W \cap Y)$ and/or in W:
+             $$(W \cap Y)\cup W = \{ (0,0,0), (0,0,1), (0,1,0), (0,1,1) \}$$
+             \begin{center} \boxed{$$(W\cap Y) \cup W = W$$} \end{center}
+
+           \item
+             \boxed{$$|(W \cap Y)\cup W| = 4$$}
+             \bigskip
+         \end{enumerate}
+ \end{enumerate}
+
+\newpage
+ \noindent $\square$ \textbf{Problem 2}  [\textsf{Nested Quantifiers}] Recall $\mathbb{D} = \{0,1,2,3,4,5,6,7,8,9\}$ and $\mathbb{N}$ from \textsf{L0}.  Determine the truth value of each proposition.  Careful: just like we used $3$ different variables $x_1, x_2, x_3$ in our discussion of ordered triples in \textsf{L3}, here $n$ and $n_0$ are $2$ different variables. 
+  \begin{itemize}
+  \itemsep0em 
+   \item 2.1 [5 points] $\forall d \in \mathbb{D} \ \exists m \in \mathbb{D} \ \ ( | d - m | < 5)$
+   \item 2.2 [5 points] $\exists m \in \mathbb{D} \ \forall d \in \mathbb{D} \  \ (| d - m | < 5)$
+      \item 2.3 [5 points] $\forall n_0 \in \mathbb{N} \ \exists n \in \mathbb{N} \  (n_0  \leq n)$
+            \item 2.4 [5 points] $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \  (n_0 \leq n)$
+   \item 2.5 [5 points] $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ ( n_0 \leq n \ \Rightarrow  \ 4<n)$
+\end{itemize}
+\emph{Solution}
+
+\begin{enumerate}[1)]
+  \item
+    $\forall d \in \mathbb{D} \ \exists m \in \mathbb{D} (|d-m <5|)$ \\
+    for all d in $\mathbb{D}$ there exists an m in $ \mathbb{D}$ such that $|d - m <5|$ \\
+%  let $d = 1$ \\
+ % if $m = 1$ 
+    for all d $\leq$ 5, if m = 1, then $|d-m| \leq 5$ is \boxed{true} \\
+    for all d $>$ 5, if m = 5, then then $|d-m| \leq 5$ is \boxed{true}
+  
+    \bigskip
+  \item
+    $\exists m \in \mathbb{D} \ \forall d \in \mathbb{D} \  \ (| d - m | < 5)$ \\
+    there exists an m in $\mathbb{D}$ for all d in $\mathbb{D}$ such that $(|d-m| <5)$\\ 
+    if m = 1 for all d $\leq$ 5, then $|d-m| \leq 5$ i    s \boxed{true} \\
+    if m = 5 for all d $>$ 5, then then $|d-m| \leq 5$     is \boxed{true}
+
+    \bigskip
+  \item
+    $\forall n_0 \in \mathbb{N} \ \exists n \in \mathbb{N} \  (n_0  \leq n)$ \\
+    for all $n_0$ in $\mathbb{N}$ there exists an n in $\mathbb{N}$ such that $(n_0 \leq n)$
+    this statment is true because you can pick $n$ to be equal to $n_0$ 
+    \boxed{true}
+
+    \bigskip
+  \item
+    $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \  (n_0 \leq n)$ \\
+    there exists $n_0$ in $\mathbb{N}$ for all n in $\mathbb{N}$ such that $(n_0 \leq n)$\\
+    let $n_0 = n$ \\
+    $n_0 \leq n$ is \boxed{true}
+    \bigskip
+  \item
+    $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ ( n_0 \leq n \ \Rightarrow \ 4<n)$ \\
+    there exists $n_0$ in $\mathbb{N}$ for all n in $\mathbb{N}$ such that $( n_0 \leq n \ \Rightarrow \ 4<n)$
+    this is not true because if $n_0 = 5$ and $n = 5$ 
+    $n_0 \leq n$ is true but $4 < n$ is false. there being an $n_0 \leq n$ does not imply that $4 < n$
+    \boxed{true}
+    
+
+    \bigskip
+\end{enumerate}
+
+\newpage
+  \noindent $\square$ \textbf{Problem 3} [\textsf{Functions}].  Recall the infinite set of natural numbers $\mathbb{N} = \{0,1,2,3,\ldots\}$ and the infinite set of integers $\mathbb{Z} = \{ \ldots, -2, -1,0,1,2,\ldots\}$ both introduced in \textsf{L0}.  Recall also from \textsf{L0} in our review of \textit{divisibility} that a natural number $n \in \mathbb{N}$ is \textit{even} or \textit{odd} if the existential proposition ``$\exists k \in \mathbb{N} \ n=2k$'' is true or false, respectively.  For example, if we take $n=0$, we can conclude that $0$ is even since $\exists k \in \mathbb{N} \  0=2k$ is true.  The piecewise-formula 
+    $$\lambda (n) = \begin{cases}  \ \ \  \frac{n}{2} \ \ \ \ \ \ \textnormal{if} \ \ \ n \ \ \textnormal{is even} \\ - \frac{n+1}{2} \ \ \ \ \textnormal{if} \ \ \ n \ \ \textnormal{is odd} \end{cases} $$ 
+    
+    \noindent defines a function $\lambda: \mathbb{N} \rightarrow \mathbb{Z}$ as in \textsf{L4} with domain $\mathbb{N}$ and codomain $\mathbb{Z}$.  In \textsf{L4}, I called this the \textit{interleaving function}.  Make sure you know why $\lambda(5)= -3$, then fill in the table below:
+
+\begin{Small}
+\begin{centering}
+           \begin{table}[hbt!]
+\begin{tabular}{| l |  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | l  | }
+  \hline 
+  $\lambda(n)$ & $0$ & $-1$ & $1$ & $ -2$ & $2$& $-3$ &$3$ &$-4$ & $4$ &$-5$ & $5$ & $-6$ & $6$ & $-7$ & $7$  & $-8$ & $8$\\ 
+ \hline
+ $n$ &  $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ & $13$ & $14$ & $15$ & $16$  \\
+ \hline
+\end{tabular}
+\end{table}
+\end{centering}
+\end{Small}
+
+ \begin{itemize}
+          \itemsep0em
+          \item 3.1 [10 points] Prove that $n \in \mathbb{N}$ is even if and only if $\lambda(n)$ is non-negative.
+          \item 3.2 [10 points] Prove that $n \in \mathbb{N}$ is odd if and only if $\lambda(n)$ is negative.
+          \item 3.3 [15 points] Prove that $\lambda: \mathbb{N} \rightarrow \mathbb{Z}$ is surjective.
+          \item 3.4 [15 points] Prove that $\lambda: \mathbb{N} \rightarrow \mathbb{Z}$ is injective.
+          \end{itemize}
+
+            
+ \noindent \textit{Hint 1: Reread the discussion in \textnormal{\textsf{L4}} of this ``interleaving function'' $\lambda: \mathbb{N} \rightarrow \mathbb{Z}$.}
+
+ \noindent \textit{Hint 2: To prove $P \Leftrightarrow Q$, you must prove $P \Rightarrow Q$ and also prove $Q \Rightarrow P$.}
+
+
+\emph{solution}
+
+        %solution goes here%
+ \begin{enumerate}[1)]
+  \item
+    let n be some even number.
+    then:$\lambda(n) = \frac{n}{2}$. \\
+    since n is even $\lambda(n)$ is a whole number and it isnt negative. \\ 
+    \bigskip
+    then let $\lambda(n)$ be a non negative number
+    since $\lambda(n)$ is a piece wise function it must be using the $\frac{n}{2}$ since its the only non negative option \\
+    and that part of the peicewise fxn only happens when n is even\\
+    $\qed$
+    \bigskip
+  \item
+    let n be some odd number.
+    then:$\lambda(n) = -\frac{n+1}{2}$. \\
+    since n is odd $\lambda(n)$ is a whole number and     it is negative.\\
+    \bigskip
+    then let $\lambda(n)$ be a negative number since $\lambda(n)$ is a piece wise function it must
+     be using the $-\frac{n+1}{2}$ since its the only negative option \\
+    and that part of the peicewise fxn only happens when n is odd
+    $\qed$
+
+    \newpage
+  \item
+    a function $f: X \rightarrow Y$ is surjective if 
+    $\forall y \in Y \ \exists x \in X \ y = f(x)$\\
+    let n be an even number, then $\lambda(x)$ = $\frac{n}{2}$ since it divides by 2 it increments by 1 as n increases by 2. $\frac{n}{2} = \{0,1,2,3...\}$
+    let n be an odd number. then then $\lambda(x)$ = $-\frac{n+1}{2}$ since it divides by 2 it decrements by 1 as n increases by 2. $-\frac{n+1}{2} = \{-1,-2,-3...\}$
+if we take the union of the two sets (which is itself the piecewise funciton $\lambda(x)$ it goes to all elements of the integers\\
+since every x in the natural numbers eventually go to every y in the integers, $\lambda(x)$ is surjective
+$\qed$
+
+    
+    \bigskip
+  \item
+a function $f: X \rightarrow Y$ is injective if 
+$\forall a \in X \ \forall b \in X \ (f(a) = f(b) \Rightarrow a=b)$ \\
+let a be even. \\
+$(\frac{a}{2} = \lambda(b))$ if they are equal to eachother then b must also be even \\
+$(\frac{a}{2} = \frac{b}{2})$ if you multiply both sides by two you get:
+$$a = b$$
+let a be odd. \\
+$(-\frac{a+1}{2} = \lambda(b))$ if they are equal to eachother then b must also be odd \\
+$(-\frac{a+1}{2} = -\frac{b+1}{2})$ if you multiply both sides by two you get:
+$$a+1 = b+1$$
+subtract both sides by 1:
+$$a = b$$
+$\qed$
+    \bigskip
+\newpage
+\noindent $\square$ \textbf{Bonus} [X points] For any non-empty set $S$, finite or infinite, the \textit{power set} $\mathcal{P}(S)$ is 
+$$\mathcal{P}(S) = \{ A \ : \ A \subseteq S \}$$ 
+the set of all subsets of $S$. $f: S \rightarrow \mathcal{P}(S)$. 
+
+
+\emph{solution}
+
+        %solution goes here%
+
+\end{enumerate}
+	
+
+
+
+\end{document}
+
+
