@@ -1,0 +1,110 @@
+\documentclass[11pt,twoside]{amsart}
+
+\usepackage{graphicx, amsfonts, amsmath, amssymb, amscd, amsthm, lmodern, enumitem, parskip} \usepackage[T1]{fontenc} \usepackage[hidelinks]{hyperref}
+ 
+\usepackage{ mathrsfs, upgreek, esint, eucal, bbm, textcomp, wrapfig} \usepackage[usenames,dvipsnames,svgnames,table]{xcolor} \usepackage[none]{hyphenat} \setcounter{tocdepth}{3}
+ 
+\textwidth=6in \textheight=9in \hoffset=-0.375in \voffset=-0.75in
+ 
+\DeclareMathOperator*{\R}{\mathbb{R}} \DeclareMathOperator*{\N}{\mathbb{N}} \DeclareMathOperator*{\Q}{\mathbb{Q}} \DeclareMathOperator*{\Z}{\mathbb{Z}} \DeclareMathOperator*{\E}{\mathbb{E}} \DeclareMathOperator*{\C}{\mathbb{C}} \DeclareMathOperator*{\A}{\mathbb{A}}
+
+ 
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}
+\newtheorem{bprob}{$\square$ Problem}
+
+
+\title {Micheal Bear, Midterm 1, 9/24/25} 
+
+\begin{document}
+	\maketitle	
+
+Assignment (2 problems $50 + 50 = 100$ points total)
+
+\begin{bprob} %problem text% 
+  {[ Addition and Multiplication of Intergers as Functions ]} \\
+  For any integer $k \in \Z$,define two functions $\alpha_k: \Z \to \Z$ by the formulas 
+    \begin{align*}
+      \alpha_k(m) &= k + m \\
+      \gamma_k(m) &= k \cdot m
+    \end{align*}
+ where $+$ and $\cdot$ are addition and multiplication in $\Z$, respectively, For example, if we choose $k = 2$ and $m = 6$, then $\alpha_2(6) = 2+6=8$ and $\gamma_2(6) = 2 \cdot 6 = 12$, whereas if we just choose $k = 2$ and allow $m$ to vary, then $\alpha_2$ and $\gamma_2$ are functions with domain $\Z$ and codomain $\Z$. The subscript $k$ is not an input to the fucntion. The subscript $k$ labels diffrent functions!
+    \begin{enumerate}[label= 1.\arabic*, itemsep=0.1cm]
+        \item %1.1
+          {[10 points]} Find the set of all $k \in \Z$ for which $\alpha_k$ is a bijection. Give proofs.
+        \item %1.2
+          {[10 points]} Find the set of all $k \in \Z$ for which $\gamma_k$ is a bijection. Give proofs.
+        \item %1.3
+          {[10 points]} is $\alpha_{111} \circ \gamma_{112} = \gamma_{112} \circ \alpha{111}$ true or false? Prove it.
+        \item %1.4
+          {[10 points]} is $\forall m \in \Z \exists k \in \Z | \alpha_k(m) + \alpha_k(m)| \leq$ true or false? Prove it.
+        \item %1.5
+          {[10 points]} is $\forall m \in \Z \exists k \in \Z | \gamma(m) + \gamma(m)| \leq$ true or false? Prove it.
+
+    \end{enumerate}
+\end{bprob}
+\textit{Hint: draw the arrow aiagram for $\alpha_k$ and $\gamma_k$ for $k \in \{ -1, -1, 0, 1, 2 \}$ to gain intuition, then for each, see if you can rpove if it is a bijecttion or not. is $\alpha_1$ a bijection or not? Can you prove it? What about $\alpha_0$? $\gamma_0$? Answer these before tackling Problems 1.1 and 1.2.} \medskip \\
+\textit{Caution: in the case $k = 2$. the function $\gamma_2 : \Z \to \Z$ in this problem is not the same as $\Delta : \N \to E$ from L4. Why? Although $\gamma_2$ and $\Delta$ both multiply their input by 2, they aren't the same functions since they don't have the same domain nor the same codomain.} \medskip \\
+\emph{solution}
+%solution goes here%
+    \begin{enumerate}[label= 1.\arabic*, itemsep=0.4cm]
+        \item %1.1
+          %item text
+        \item %1.2
+          %item text
+        \item %1.3
+
+        \item %1.4
+        \item %1.5
+
+
+    \end{enumerate}
+
+\begin{bprob} %problem text% 
+  {[The Field with Two Elements]} Let $F = \{ a,b\}$ be the finite set with $a \neq b$ and $|f| = 2$. Consider the two binary operations $\otimes$ and $\oplus$ on $F$ defined by the formulas 
+  \begin{align*}
+    a \oplus a &= a     &a \otimes a &= a \\
+    a \oplus b &= b     &a \otimes b &= a \\
+    b \oplus a &= b     &b \otimes a &= a \\
+    b \oplus b &= a     &b \otimes b &= b
+  \end{align*}
+  The first binary operation $\otimes$ takes two inputs $x \in F$ and $x \in F$ and $y \in F$ and returns a single output $x \otimes y \in F$ according to the table on the left. Similarly, the second binary operation $\otimes$ takes two inputs $x \in F$ and returns a single output $x \otimes y \in F$ acording to the table on the right. These tules enable calculations such as
+  $$(a \oplus (b \oplus b)) \otimes b = (a \oplus a) \otimes b = a \otimes b = a$$
+Determine the truth value of each propsition below. Give proofs and explain your reasoning. 
+    \begin{enumerate}[label= 2.\arabic*, itemsep=0.2cm]
+        \item %2.1
+          {[10 points]} $\forall x \in F \Big((x\otimes x = x) \Rightarrow (x = a) \Big)$
+        \item %2.2
+          {[10 points]} $\exists w \in F \ \forall x \in F x \oplus w = x$
+          %item text
+        \item %2.3
+          {[10 points]} $\forall x \in F \ \exists \ y \in F \ x \otimes y = b$
+
+          %item text
+        \item %2.4
+          {[10 points]} $\exists g \in F \ \forall \ x \in x \otimes g = x $
+          %item text
+        \item %2.5
+          {[10 points]} $\forall x \in F \ \exists y \in F \ x \oplus y = a $
+          %item text
+
+    \end{enumerate}
+\end{bprob}
+\emph{solution}
+%solution goes here%
+    \begin{enumerate}[label= 1.\arabic*, itemsep=0.4cm]
+        \item %1.1
+          %item text
+        \item %2.2
+          %item text
+        \item %2.3
+        \item %2.4
+        \item %2.5
+    \end{enumerate}
+
+
+
+
+\end{document}
+
+

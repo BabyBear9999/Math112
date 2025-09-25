@@ -26,10 +26,15 @@
 
   \begin{enumerate}[label= 1.\arabic*, itemsep=0.2cm]
     \item {[10 points]} Prove that $f$ is injective 
+     \textit{Hint: proceed from the definition in }\textsf{L4} 
     \item {[10 points]} Prove that $1 \not \in$ range $(f)$.
+ \textit{Hint: use "proof by contradiction" from }\textsf{P5}
     \item {[10 points]} Prove that range $(f) = \mathbb{R} \setminus \{1\}$.
+    \textit{Hint: proceed from the definition in }\textsf{L4}
     \item {[10 points]} Is $\forall x \in D \ \exists u \in \R \ f(x) \leq u$ true or false? Give a proof.
+      \textit{Hint:} \textsf{P4} \textit{\& Desmos}
     \item {[10 points]} Is $\exists u \in \R \ \forall x \in D \ f(x) \leq u$ true or false? Give a proof.
+      \textit{Hint:} \textsf{P4} \textit{\& Desmos}
  \end{enumerate} 
 \end{bprob}
 
@@ -37,21 +42,143 @@
   %solution text
 \begin{enumerate}[label= 1.\arabic*), itemsep=0.4cm]
   \item %1.1
-  
-
+    a function $f : X \rightarrow Y$ is injective if $\forall a \in X \ \forall b \in X \ (f(a) = f(b) \Rightarrow a=b)$ \bigskip \\
+    Consider $a \in X$ and $b \in X$. 
+    Then $f(a) = \frac{a-2}{a+1}$ 
+    and $f(b) = \frac{b-2}{b+1}.$ \\
+    Suppose $f(a) = f(b)$, 
+    it follows that $\frac{a-2}{a+1} = \frac{b-2}{b+1}$.
+    if you solve for a you get:
+    \begin{align*}
+      \frac{a-2}{a+1} &= \frac{b-2}{b+1}\\ 
+      (a-2)\cdot(b+1) &= (b-2)\cdot(a+1)\\
+        ab + a -2b -2 &= ab + b - 2a -2 \\
+     ab - ab + a + 2a &= b + 2b -2 +2 \\
+                   3a &= 3b \\      
+                    a &= b
+\end{align*}
+   Since the equality simplifies to a = b the statment 
+   $\big( f(a) = f(b) \Rightarrow a = b \big)$ is true, 
+     because $True \Rightarrow True$. $\qed$ 
+    \newpage
   \item %1.2
-    
+  The $range(f) = \{ y \in Y : \exists \ x\in X \ y = f(x)\}$.\\ \medskip 
+  We attempt a proof by contradiction:\\
+  First assume $1\in range \ (f)$. consider $y\in Y$ let $y=1
+  $ (since we are looking for the $x \in X$ where the statement$y=f(x)$ is True). Then evaluate $f(x) = 1$:
+
+  \begin{align*}
+         f(x) &= \frac{x-2}{x+1} \\
+1 \cdot (x+1) &= (x-2) \\
+          x+1 &= x-2 \\
+        x-x+1 &= -2 \\ 
+            1 &= -2
+  \end{align*}
+    Since $1 \neq -2$ and there are no solutions to this equation, we have reached a contradiciton. Thus, by proof of contradiciton $1 \notin range \ (f) \qed$
+          
 
   \item %1.3
+ %   We already know that $1 \notin range(f)$ from the problem above. Then split $\mathbb{R}$ into two subsets: \\
+ %  the subset $R_n$ where $R_n: \forall x \in \mathbb{R} < 1 $ , \\
+ %  and the subset $R_p$ where $R_p: \forall x \in \mathbb{R} > 1$.  \medskip \\
+%Consider the case of $R_n$ d:
+% \begin{align*}
+%   f(x < 0) &= \frac{(x<0)-2}{(x<0+1)}\\
+%            &= \frac{x<-2}{x<1}\\
+%            &= ?
+% \end{align*} 
+%Consider the case of $R_p$ d:
+% \begin{align*}
+%   f(x > 0) &= \frac{(x>0)-2}{(x>0+1)}\\
+%            &= \frac{x>-2}{x>1}
+%            &= ?
+% \end{align*}
+  We already know that $1 \notin range(f)$ from the problem above. we can split this problem into two cases: (1) the case where $x \in D$ for all $r \in \R r < 1$, and (2) the case where $x \in D$ for all $r \in \R r>1$.\\
+  Case (1): let $x \in D$. Assume $r \in R$ such that $r<1$ Then solve for x:
+    \begin{align*}
+      f(x) = \frac{x-2}{x+1} &= r \\
+                       (x-2) &= r \cdot (x+1) \\ 
+                       x-2  &= rx + r \\ 
+                       -2-1 &= rx-x+r \\ 
+                       -3-r &= x(r-1) \\
+         \frac{-(r+3)}{r-1} &= x
+    \end{align*}
+    Since the equation is true when $r < 1$, the statement: for all $r \in \R$ where $r<1$, $r \in range(f)$ holds true. 
+    Case(2): let $x \in D$. Assume $r \in R$ such that $r>1$ then sove for x:
+    \begin{align*}
+      f(x) = \frac{x-2}{x+1} &= r \\
+                      x - 2  &= rx +1 \\
+                      -3-r &= x(r-1) \\
+         \frac{-(r+3)}{r-1}&= x
+    \end{align*}
+    since the equation holds true when $r>1$, the statement: for all $r \in \R$ where $r>1$, $r \in range(f)$ holds true.
+since both cases are true, the whole proposition holds true $\qed$
+  \newpage
+\item %1.4
+    $\forall x \in D \ \exists \ u \in \    R \ f(x) \leq u$ \\
+   % Otherwise stated as: For all x in D there exists a u in the set of real numbers such that f(x) $\leq$ u. 
+   %Consider $x \in D$ and $u \in D$. 
+  % Assume $f(x) \leq u$, and solve for u:
+ %
+%    \begin{align*}
+%     f(x) = \frac{x-2}{x+1} &\leq u \\
+%                     (x-2)  &\leq u \cdot (x+1) \\
+%                      x - 2 &\leq ux +1 \\ 
+%                   x - 2 -1 &\leq ux \\
+%                   -3 &\leq ux + x \\
+%                   -3 &\leq x(u+1) \\
+%                -3x &\leq u +1
+%   \end{align*}
+  Let $x \in D$. Nominate $u \in \R$ in terms of x by setting $u = x$ then:
+    \begin{align*}
+      f(x) = \frac{x-2}{x+1}  &\leq u\\
+              \frac{x-2}{x+1} &\leq x \\
+                         (x-2)&\leq x \cdot (x+1) \\
+                         x-2 &\leq x^2 +1 \\
+                         -2-1 &\leq x^2 -x \\
+                         -3 &\leq x(x-1).
+    \end{align*}
+    There are two solutions to $-3 \leq x(x-1)$:
+    $$-3 \leq x$$
+    and 
+    $$-3 \leq x-1 $$
+     $$-4 \leq x.$$ 
 
-
-  \item %1.4
-
-
+     Since both are acceptable x values the statement: $f(x) \leq u$ holds true $\qed$
 
   \item %1.5
-
-
+    $\exists u \in \R \ \forall x \in D \ f(x) \leq u$ \\
+   % Otherwise stated as: there exists a u in the set of real numbers where all x in D such that$f(x) \leq u$.
+%   To prove that a proposition P is false, it is sufficent to prove that $\neg P$ is true. The negation of our proposition is equivelent to:
+%   \begin{align*}
+%   \neg\big(\exists u\in\R\ \forall x\in D\ f(x)\leq u\big)
+%       &\Leftrightarrow \forall u \in \R \neg (\forall x \in D\ f(x) \leq u) 
+%         \\ 
+%       &\Leftrightarrow \forall u \in \R \exists x \in D
+%           \ \neg(f(x) \geq u )
+%         \\
+%       &\Leftrightarrow \forall u \in \R \exists x \in D \ f(x) < u 
+%   \end{align*}
+%hus it suffices to prove for all $u \in \R$ there is some $x\in D$, such that $f(x) < u$.\medskip
+%
+%let $u \in \R$. Nominate $x \in D$ in terms of u by seting $x = u$, then:
+%\begin{align*}
+%  f(x) = \frac{x-2}{x+1} &< u \\  
+%  f(u) = \frac{u-2}{u+1} &< u
+          % nvm i still dont know
+%\end{align*}
+    let $u \in \R$ Assume $x\in D$ such that $f(x) \leq u$. Solve for x. 
+    \begin{align*}
+      f(x) = \frac{x-2}{x+1} &\leq u \\
+                  (x-2) &\leq u \cdot (x+1) \\
+                  x - 2 &\leq ux + 1\\
+                  -2 -1 &\leq ux -x \\
+                     -3 &\leq - x(u-1)\\
+                     \frac{-3}{u-1} &\leq  -x \\
+                     \frac{3}{u-1} &> x
+    \end{align*}
+    since the equation can reverse the statement holds true $\qed$
+%not finished
 \end{enumerate}
 
 \newpage
@@ -74,14 +201,26 @@ prove that each given implication below is false by providing an explicit counte
 \emph{solution}
 
 \begin{enumerate}[label= 2.\arabic*), itemsep=0.4cm]
-  \item %2.1
+  \item %2.1 
+    %somehting about mismatch of domain and codomain
+
+ A function  $f:X \to Y$ is surjective if $\forall y \in Y \ \exists x \in X \ y = f(x)$. \medskip \\
+Consider $y \in Y$, let $x \in X$, let$z \in Z$. 
+The function $g \circ f$ can be rewritten as: $g(f(x))$. 
+Since f is constant no matter what x you put in f, you will always get back out the same y. we can re write our function as $g(y)$. Since there is only one input $y \in Y$ if |y| > 1 we can't hit all $z \in Z$ of our codomain. Since g is bijective each input will have exactly one output. This shows that the proposition is False. $\qed$
 
 
   \item %2.2
+    Just because the domain is less than the codomain does not mean that it will only go to one output. 
 
+    %--> (x^2?)
+    
+%  the cardinality of the domain and codomain don't tell us that a
 
   \item %2.3
-
+    Let $ X = \{1,2,3,4\}$ and let \{1,2,3,4,5,6,7,8\}.
+   $f(x) = x+2$. A function being injective only guaranties the $range(f)$ has the same cardinality of X. 
+    
 
 \end{enumerate}
 
@@ -100,9 +239,17 @@ prove that each given implication below is false by providing an explicit counte
 
 \begin{enumerate}[label=3.\arabic*, itemsep = 0.4cm]
   \item %3.1
+        a function  $f:X \to Y$ is surjective if $\forall y \in Y \ \exists x \in X \ y = f(x)$ \bigskip \\
+ Consider $y \in Y$, let $x \in X$.
+ The composition $(g\circ f)(x)$ can be re written as: $g(f(x))$.
+Since $f(x)$ is surjective, we know that for all $y \in Y$ there exists an $x \in X$ such that $y = f(x)$. it follows that we can then substitute $f(x)$ for the $y \in Y$ that corisponds with the x. That then gives us $g(y)$. since we know g(y) is surjective. the whole function is surjective $\qed$
 
   \item %3.2
-
+     a function $f : X \rightarrow Y$ is injective if $\forall a \in X \ \forall b \in X \ (f(a) = f(b) \Rightarrow a=b)$ \bigskip \\
+       Consider $a \in X$, let $b \in x$.
+The composition $g \circ f$ can be rewritten as $f(g(x))$. since $g(x)$ is injective we know that for all $a \in X$ and for all $b \in X$, $f(a) = f(b)$ implies $a=b$. It follows that if g is surjective, then $g(f(a)) = g(f(b))$ this implies that $a=b$. thus $g \circ f$ is injective $\qed$ 
+    
+    
 \end{enumerate}
 	
 
