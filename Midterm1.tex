@@ -37,29 +37,100 @@ Assignment (2 problems $50 + 50 = 100$ points total)
         \item %1.3
           {[10 points]} is $\alpha_{111} \circ \gamma_{112} = \gamma_{112} \circ \alpha{111}$ true or false? Prove it.
         \item %1.4
-          {[10 points]} is $\forall m \in \Z \exists k \in \Z | \alpha_k(m) + \alpha_k(m)| \leq$ true or false? Prove it.
+          {[10 points]} is $\forall m \in \Z \exists k \in \Z | \alpha_k(m) + \alpha_k(m)| \leq 112$ true or false? Prove it.
         \item %1.5
-          {[10 points]} is $\forall m \in \Z \exists k \in \Z | \gamma(m) + \gamma(m)| \leq$ true or false? Prove it.
+          {[10 points]} is $\forall m \in \Z \exists k \in \Z | \gamma(m) + \gamma(m)| \leq 112$ true or false? Prove it.
 
     \end{enumerate}
 \end{bprob}
-\textit{Hint: draw the arrow aiagram for $\alpha_k$ and $\gamma_k$ for $k \in \{ -1, -1, 0, 1, 2 \}$ to gain intuition, then for each, see if you can rpove if it is a bijecttion or not. is $\alpha_1$ a bijection or not? Can you prove it? What about $\alpha_0$? $\gamma_0$? Answer these before tackling Problems 1.1 and 1.2.} \medskip \\
-\textit{Caution: in the case $k = 2$. the function $\gamma_2 : \Z \to \Z$ in this problem is not the same as $\Delta : \N \to E$ from L4. Why? Although $\gamma_2$ and $\Delta$ both multiply their input by 2, they aren't the same functions since they don't have the same domain nor the same codomain.} \medskip \\
+\textit{Hint: draw the arrow aiagram for $\alpha_k$ and $\gamma_k$ for $k \in \{ -2, -1, 0, 1, 2 \}$ to gain intuition, then for each, see if you can rpove if it is a bijecttion or not. is $\alpha_1$ a bijection or not? Can you prove it? What about $\alpha_0$? $\gamma_0$? Answer these before tackling Problems 1.1 and 1.2.} \medskip \\
+\textit{Caution: in the case $k = 2$. the function $\gamma_2 : \Z \to \Z$ in this problem is not the same as $\Delta : \N \to E$ from L4. Why? Although $\gamma_2$ and $\Delta$ both multiply their input by 2, they aren't the same functions since they don't have the same domain nor the same codomain.} \newpage 
 \emph{solution}
 %solution goes here%
     \begin{enumerate}[label= 1.\arabic*, itemsep=0.4cm]
         \item %1.1
           %item text
+          Find the set of all $k \in \Z$ for which $\alpha_k$ is a bijection.\\
+          $\alpha_k$ is bijective for $k = \{ ...,-2,-1,0,1,2,...\} =  \Z \medskip $\\
+          \textit{Proof:} $\alpha_k(m) = k + m$.\\
+          First prove $\alpha_k$ is surjective: $\forall y \in \Z \ \exists x \in \Z \ y = f(x)$. \\ Consider $y \in \Z$, let $x \in \Z$,  $x= -k +y$. plug $x$ into $f$:
+          \begin{align*}
+            f(-k+y) &= k-k+y\\
+                    &= y
+          \end{align*}
+          Since that satisfies the propsition, $\alpha_k$ is surjective for all $y \in \Z$.\\
+          Next prove $\alpha_k$ is injective: $\forall b \in \Z \ \forall b \in \Z \big( (f(a) = f(b)) \Rightarrow (a=b) \big)$.
+          Consider $a,b \in \Z$, assume $f(a)=f(b)$.
+          \begin{align*}
+            f(a) &= f(b) \\
+            k + a &= k + b\\
+            a&=b
+          \end{align*}
+          Since this satisfies the origonal proposition because $True \Rightarrow True = True$ by the truth table. Thus, $\alpha_k$ is injective  for all $a,b \in \Z$.
+          Since $\alpha_k$ is Surjective and injective, it is bijective for all $x \in \Z$. $\qed$
+        
+          
         \item %1.2
           %item text
+          Find the set of all $k \in \Z$ for which $\gamma_k$ is a bijection.\\
+          $\gamma_k$ is bijective for $k = \{...-3,-2,-1,1,2,3\} = \{\Z \ \lvert \ |k| \geq 1 \}$.\\
+          \textit{proof:} $\gamma_k = m \cdot k$\\
+          First, Surjectivity. Prove $\forall y \in \Z \ \exists x \in \Z \ y = f(x)$. \\
+          let $y=k+1$, $x = \frac{k+1}{k}$
+          \begin{align*}
+            f\Big(\frac{k+1}{k}\Big) &= \frac{k+1}{k} \cdot k \\
+             &= k+1 
+          \end{align*}
+
+       %   \begin{align*}
+       %    k+1 &= m \cdot k \\
+       %    \frac{k+1}{k} &= m 
+       %  \end{align*}
+          since $\frac{k+1}{k}$ only works when $|k| \geq 1$, it follows that $\gamma_k$ is surjective for all $y,x \in \Z$ when $|k| \geq 1$.\\
+          Then, Injectivity: $\forall b \in \Z \ \forall b \in \Z \big( (f(a) = f(b)) \Rightarrow (a=b) \big)$\\
+          Consider $a,b \in \Z$, assume $f(a)=f(B)$.
+          \begin{align*}
+            f(a) &= f(b) \\
+            a \cdot k &= b \cdot k \\
+            a &= b.
+          \end{align*}
+        This statment is true when $k \neq 0$. Thus $\gamma_k$ is injective when $|k| >0$. \\ 
+      Since $\gamma_k$ is surjective when $|k| \geq 1$ and $\gamma_k$ is injective when $|k| > 0$, it follows that $\gamma_k$ is bijective when $|k| \geq 1$ $\qed$
+
+
         \item %1.3
+          is $\alpha_{111} \circ \gamma_{112} = \gamma_{112} \circ \alpha{111}$ true or false? \\
+          \boxed{False} consider $m \in \Z$, assume $\alpha_{111} \circ \gamma_{112} = \gamma_{112} \circ \alpha{111}$
+          \begin{align*}
+            \alpha_{111}(\gamma_{112}(m)) &= \gamma_{112}(\alpha_{111} (m))\\
+            \alpha{111}(112\cdot m) &= \gamma_{112}(111+m)\\
+            111+112m &= 112(111+m)\\
+            111+112m &\neq 112\cdot 111 +112m
+          \end{align*}
+          Since this is not equal, the two compositions are also not equal and the whole equation is $False$. $\qed$
 
         \item %1.4
-        \item %1.5
+          is $\forall m \in \Z \exists k \in \Z | \alpha_k(m) + \alpha_k(m)| \leq 112$ true or false?\\
+        \boxed{False} Let $m = 1$, consider $k \in \Z$.Evaluate the statement for our value of m.
+        \begin{align*}
+          |k+1-k+1| &\leq 112 \\
+          |2| &\leq 112.
+        \end{align*}
+       This statement is false when $m=1$. Therefore this statment does not hold for all $m \in \Z$. it follows that the statement $\forall m \in \Z \exists k \in \Z | \alpha_k(m) + \alpha_k(m)| \leq 112$ is $False$. $\qed$
 
+        \item %1.5
+          is $\forall m \in \Z \exists k \in \Z | \gamma(m) + \gamma(m)| \leq 112$ true or false?\\
+          \boxed{False} consider $m,k\in \Z$. Evaluate the statement for our values of $m$ and $k$ 
+          \begin{align*}
+            |k \cdot m + -k \cdot m| &\leq 112\\
+            |0| \leq 112
+          \end{align*}
+          since the equation evaluates to 0 for all $k,m \in \Z$. it follows that the statment $\forall m \in \Z \exists k \in \Z | \gamma(m) + \gamma(m)| \leq 112$ is $False$. $\qed$
+
+      
 
     \end{enumerate}
-
+\newpage
 \begin{bprob} %problem text% 
   {[The Field with Two Elements]} Let $F = \{ a,b\}$ be the finite set with $a \neq b$ and $|f| = 2$. Consider the two binary operations $\otimes$ and $\oplus$ on $F$ defined by the formulas 
   \begin{align*}
@@ -79,10 +150,9 @@ Determine the truth value of each propsition below. Give proofs and explain your
           %item text
         \item %2.3
           {[10 points]} $\forall x \in F \ \exists \ y \in F \ x \otimes y = b$
-
           %item text
         \item %2.4
-          {[10 points]} $\exists g \in F \ \forall \ x \in x \otimes g = x $
+          {[10 points]} $\exists g \in F \ \forall \ x \in F \otimes g = x $
           %item text
         \item %2.5
           {[10 points]} $\forall x \in F \ \exists y \in F \ x \oplus y = a $
@@ -92,14 +162,95 @@ Determine the truth value of each propsition below. Give proofs and explain your
 \end{bprob}
 \emph{solution}
 %solution goes here%
-    \begin{enumerate}[label= 1.\arabic*, itemsep=0.4cm]
-        \item %1.1
+    \begin{enumerate}[label= 2.\arabic*, itemsep=0.4cm]
+        \item %2.1
           %item text
+          $\forall x \in F \Big((x\otimes x = x) \Rightarrow (x = a) \Big)$ \\
+          \boxed{$False$} : let $x=b$, if we plug $x$ into the equation given we get:
+          \begin{align*} 
+            x \otimes x &= x \\
+            b \otimes b &= b.
+          \end{align*}
+          The equation $b \otimes b = b$ is true according to the formulas given. However, the statement $\Big((b\otimes b = b) \Rightarrow (b = a) \Big)$ is $False$. This is because $True \Rightarrow False$ is $False$ by the truth table of implies. Since the statment does not hold for all $x \in F$, the proposition $\forall x \in F \Big((x\otimes x = x) \Rightarrow (x = a) \Big)$ is false. $\qed$
+\newpage
         \item %2.2
           %item text
+          $\exists w \in F \ \forall x \in F \ x \oplus w = x$ \medskip \\
+          \boxed{$True$} : Nominate $w = a$. We can slip all $x \in F$ into the the case (1) where $x=a$ and case (2) where $x=b$.
+          \medskip \\
+          Case 1: Let $x=a$. If we plug in our values of $x$ and $w$ into the equation we get:
+        \begin{align*}
+          x \oplus w &= x \\
+          a \oplus a &= a
+        \end{align*}
+          by the given formulas. Since this statment is true, the propositon holds when $x =a$.
+     \medskip \\
+     Case 2: Let $x=b$. If we plug in our values of $x$ and $w$ into the equation we get:
+     \begin{align*}
+       x \oplus w &= x \\
+       b \oplus a &= b
+     \end{align*}
+      by the given formulas. Since this statement is true, the proposition holds when $w =a$.
+      \medskip \\
+      Since, when $x=a$, the proposition $x \oplus w = x$ holds for both $x=a$ and $x=b$--and a, b are the only elements of F, this proposition holds for all $x \in F$. Thus: \\ $\exists w \in F \ \forall x \in F \ x \oplus w = x$ is true $\qed$
+
+
         \item %2.3
-        \item %2.4
+          $\forall x \in F \ \exists \ y \in F \ x \otimes y = b $ \medskip \\
+          \boxed{$False$} : Consider $x=a$, let $y = a$. if we plug in $x$ and $y$ we get:
+          \begin{align*}
+            x \otimes y &= b \\
+            a \otimes a &= a.
+          \end{align*}
+          By the equations given, $a \otimes a = a$ and  $a \otimes a != b$ as it would need to be for the proposition to be true, thus the statement does not hold when $y = a$.\\
+          Now consider $x=a$, let $y=b$. If we plug in $x$ and $y$ we get:
+        \begin{align*}
+          x \otimes y &= b \\
+          a \otimes b &= a.
+        \end{align*}
+        By the equations given $a \otimes b = a$ and  $a \otimes b != b$ as it would need to be for the proposition to be true, thus the statement does not hold when $y = b$.\medskip \\
+        Since the statement does not hold when $y=a$ and it does not hold when $y=b$, and $a$ and $b$ are all elements of $F$, there are no values of $y$ that make the proposition true when $x=a$.\medskip \\
+       Since the proposition is always false when $x=a$ it follows that the proposition is not true for all $g \in F$, thus the statement $\forall x \in F \ \exists \ y \in F \ x \otimes y = b $ is $False$. $\qed$ 
+       \newpage
+
+        \item %2.4$
+          $\exists g \in F \ \forall  x \in F \ x\otimes g = x $ \medskip \\
+          \boxed{$True$}: consider $g=a$. Since there are only two elements of F, in order to prove the statement is true for all elements $x \in F$ we can consider two cases: case (1) where $x=a$ and case (2) where $x=b$. \medskip \\
+          Case 1: $x=a$. plug in our values of $x$ and $g$
+           \begin{align*}
+              x \otimes g &= x\\
+              a \otimes a &= a.
+            \end{align*}
+            since $a \otimes a =a$ in our given formulas, the statments holds true for $x=a$.\medskip \\
+            Case 2: $x=b$. plug in the values of $x$ and $g$:
+          \begin{align*}
+            x \otimes g &= x\\
+            b \otimes a &= a.
+          \end{align*}
+          Since $b \otimes a =a$ in our given formulas, then the statement holds true for $x=b$.\medskip \\
+          Since the statement holds for $x=a$ and $x=b$ and $a$ and $b$ are all the elements of $F$. $\exists g \in F \ \forall  x \in F \ x\otimes g = x $ is $True$. $\qed$ 
+
+
+
+
         \item %2.5
+          $\forall x \in F \ \exists y \in F \ x \oplus y = a $ \medskip \\
+          \boxed{$True$}: Since there are only two elements of $F$ we can evaluate all $x \in F$ by splitting it into two cases: case (1) where $x=a$ and case (2) where $x=b$. \medskip //
+          Case 1: consider $x=a$,let $y=a$. Plug in our values of $x$ and $y$:
+          \begin{align*}
+            x \oplus y &= a\\
+            a \oplus a &= a
+          \end{align*}
+          This is true by the given formulas. It follows that, when $x=a$, the statment holds true.
+          Case 2: consider $x=b$, let $y=b$. Plug in our values of $x$ and $y$:
+          \begin{align*}
+            x \oplus y &= a \\
+            b \oplus b &= a.
+          \end{align*}
+         This is true by the given formulas. Thus, the statement holds when $x=b$.\\
+         Since $a$, and $b$ are all the values of $F$, all values of x have been evalutated. \\Furthermore, since the proposition holds for all members of F, the statement: \\ $\forall x \in F \ \exists y \in F \ x \oplus y = a $ is $True$. $\qed$ 
+          
+
     \end{enumerate}
 
 
