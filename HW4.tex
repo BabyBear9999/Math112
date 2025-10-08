@@ -200,13 +200,47 @@
    x \x y &= \OO \x y \\
           &= \OO.
  \end{align*}
-Since we proved that the identity, $\OO$, $\x$, any value equals the identity, $\OO$ in problem 2, it follows that $\OO \x y = \OO$ 
+Since we proved that the identity, $\OO$, $\x$, any value equals the identity, $\OO$ in problem 2, it follows that $\OO \x y = \OO$. Thus, by the sliky method, $x \x y = \OO$ when $x = \OO$.
+Case (2): $y = \OO$ if we substitute our value of x into the statement $x \x y$:
+ \begin{align*}
+   x \x y &= x \x \OO \\
+          &= \OO \x x \\
+          &= \OO.
+ \end{align*}
+ First use axiom 2, commmutativity, it follows that: $x \x \OO = \OO \x x$. Since we proved that the identity, $\OO$, $\x$, any value equals the identity, $\OO$ in problem 2, it follows that $\OO \x x = \OO$. Thus, by the sliky method, $x \x y = \OO$ when $y = \OO$.
+ Since $x \x y = \OO$ when $x = \OO$ or when $y = \OO$, the original statement holds true. $\qed$
 
-   %1.4
-    $\forall x \in F \ \forall y \in F \ (x \otimes y = \mathbb{O}   \ \Rightarrow \ (x = \mathbb{O} \ \lor \ y = \mathbb{O}))$
+
+ \item %1.4
+    $\forall x \in F \ \forall y \in F \ (x \otimes y = \mathbb{O}   \ \Rightarrow \ (x = \mathbb{O} \ \lor \ y = \mathbb{O}))$\\
+  let $x,y \in F$. Assume $x \x y = \OO$, Assume $x \neq 0$. Since, by problem 2, $\OO = x \x \OO$ we can substitute one for the other in the eqation. Next, by axiom 8, all $x \neq \OO$ have $\x$-inverses. We can $\x x^{-1}$ to each side:
+  \begin{align*}
+    (x \x y) &= \OO\\
+    x^{-1} \x (x \x y) &= x^{-1} \x \OO\\
+    (x^{-1} \x x) \x y &= \OO \\
+    \I \x y &= \\ 
+    y &=. 
+  \end{align*}
+  By axiom 5, $\x$ is associative, it follows that $x^{-1} \x (x \x y) =  (x^{-1} \x x) \x y$. by axiom 8 a value $\x$ its inverse is equal to $\I$, so $x^{-1}\x x = \I$. Thus, by the slinky method, $y= \OO$. Acccording to the Hypothetical strategy if we prove that statement is true, it is sufficient to prove that, assuming $x \x y = \OO$, then $(x = \OO \lor y = \OO)$ is true. since we have proved that $(x \x y = \OO) \Rightarrow y = \OO$, then $(x = \OO \lor y = \OO)$ regardless of the truth value of $x = \OO$. Thus the original statement holds true. $\qed$
+
+  \newpage
   \item %1.5
-    $\neg \Big ( \exists \sigma \in F \ \mathbb{O} \otimes \sigma= \mathbb{I} \Big ) $
+    $\neg \Big ( \exists \sigma \in F \ \mathbb{O} \otimes \sigma= \mathbb{I} \Big ) $\\
+    We attempt a proof by contradiction. First, assume the negation of the original statement: \\
+    Assume $\exists \sigma \in F \OO \x \sigma = \I$, Evaluate the statement: 
+    \begin{align*}
+      \I &= \OO \x \sigma\\
+         &= \OO .
+    \end{align*}
+   By the slinky method, $\I = \OO$, which is a contradiction. By axiom 10, $\OO \neq \I$. Therefore the original statement is $True$. $\qed$
+
+
+
+
 \end{enumerate}
+
+
+
 
    \newpage
     \noindent $\square$ \textbf{Problem 2}  [\textsf{Induction}] Prove each of the following propositions by induction.
@@ -226,21 +260,130 @@ In the inductive step \textnormal{(ii)}, try to format your proof of the implica
 
  \begin{enumerate}[label= 2.\arabic*), itemsep=0.4cm]
   \item %2.1
-    $ \exists n_0 \in \mathbb{N} \  \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \ 2^n < n! \Big )$. \textit{where $n! = \prod\limits_{k=1}^n k$ and $0!=1$}.
+    $ \exists n_0 \in \mathbb{N} \  \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \ 2^n < n! \Big )$. \textit{where $n! = \prod\limits_{k=1}^n k$ and $0!=1$}.//
     \textit{proof.} we will prove this by induction. First note that the statement holds when $n=4$. 
-
+    \begin{align*}
+      2^4 &= 16 \\
+          &< 4!\\
+          &= 24.
+    \end{align*}
+    since $16 < 24$ the statment holds true. \\
+    By the principle of mathmatical induction, if we show that if the base case is true then, $\forall n \in \N \ (4 \leq n \lor (2^n < n!) \Rightarrow 2^{n+1} < (n+1)!)$. \\
+    First note that $4 \leq n \Rightarrow 2 < n +1$. Assum $4 \leq n$. By the hypothertical stretegy, if we prove that $2 < n+1$ is true under this assumption, it is suficent to prove that $4 \leq n \Rightarrow 2 < n +1$.
+    \begin{align*}
+      2 &< 5\\
+        &= 4 +1 \\ 
+        &\leq n + 1
+    \end{align*}
+    we know that $2<5$. and 5 can be rewritten as $4+1$ since we have assumed $4 \leq n$ it follows that $4+1 
+    \leq n+1$. thus, By the slinky method: $2 < n+1$
+    Simmilarly using the hypothetical strategy, assume $4 \leq n \land (2^n < n!)$. 
+    \begin {align*}
+      2^{n+1} &= 2^n \cdot 2\\
+              &< 2^n (n+1)\\
+              &< n! (n+1)\\
+              &=(n+1)!
+    \end {align*}
+    You can rewrite $2^{n+1}$ as $2^n \cdot 2$ by rules of exponents. Since we have previously proved that $2<n+1$ when $4\leq n$, it follows that $2^n\cdot 2< 2^n(n+1)$ when $4 \leq n$. Since, by our assumption that $2^n < n!$, it follows that $2^n(n+1) < n! (n+1).$ Lastly, we know that $n!(n+1) = (n+1)!$ by rules of algebra and factorials. thus, By the Slinky method, the original statment is $True$ via induction $\qed$
 
   \item %2.2
-    $ \exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \frac{1}{n} < 0.112 \Big )$
+    $ \exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \frac{1}{n} < 0.112 \Big )$\\
+    \textit{proof}. Choose $n_0 = 9$, We'll show 
+    $$\forall n \in \N (4 \leq n \Rightarrow \frac{1}{n} < 0.112)$$
+By the principal of Mathmatical induction, if we show the statement holds for $n=9$.\\
+    let $n=9$:
+  $$\frac{1}{9} < 0.112.$$
+  Since $\frac{1}{9} < 0.112$ is true, the statement holds for $n=9$.\\
+Next we will show that: 
+$$\forall n\in \N \Big(9 \leq n \land \frac{1}{n} < 0.112 \Rightarrow \frac{1}{n+1} < 0.112\Big)$$ 
+Assume $9 \leq n \land \frac{1}{2}<0.112$.
+\begin{align*}
+  \frac{1}{n+1} &< \frac{1}{n}\\
+                &\leq 0.112
+\end{align*}
+We know that $n+1 > n$, because since we have chosen $n_0 = 9$ then $n > 0$. Using this, it follows that $\frac{1}{n+1} < \frac{1}{n}$ since the larger a denominator is, the smaller the fraction is. Since we have assumed $\frac{1}{n} \leq 0.112$, we can just evaluate it as given. By the slinky method, we have: $\frac{1}{n+1} < 0.112$. Thus we have proven the original statement true by induction. $\qed$ 
 
+\newpage
   \item %2.3
-    $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \ 1+0.112n \leq (1+ 0.112)^n \Big )$
+    $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \ 1+0.112n \leq (1+ 0.112)^n \Big )$\\
+    \textit{proof}. Choose $n_0 = 1$. We'll show:
+    $$\forall n \in \N \Big(1 \leq n \Rightarrow 1+0.112n \leq (1+ 0.112)^n\Big)$$
+    By the principal of mathmatical induction, to prove this we will first show this statment holds for $n = 1$\\ let $n = 1$
+    \begin{align*}
+      1 + 0.0112n &= 1+0.0112\cdot 1\\
+                  &= 1.112\\
+                  &= (1+0.112)^1\\
+                  &= (1+0.112)^n
+    \end{align*}
+    First plug substitute n for 1. this expression evaluates to $1.112$. you could also write $1.112$ as $1+0.112)^1$. This is the same thing as $(1+0.112)^n$ if you substituted 1 for n. thus $1+0.0112n \leq (1+0.112)^n$ when $n=1$, by the slinky method.\\
+    Next we will show that:
+    $$\forall n \in \N \Big(1 \leq n \land 1+0.112n \leq (1+ 0.112)^n \Rightarrow  1+0.112(n+1) \leq (1+ 0.112)^{n+1}\Big)$$
+    First, we will prove that $0.112 \leq (0.112)^2n$. Let $n \in \N$, Assume $1 < N$:
+    \begin{align*}
+      0.112 &< 1(0.0112)^2 \\
+            &\leq n(0.0112)^2 \\
+            &= (0.112)^2n.
+    \end{align*}
+   We know that $0.112 < 1\cdot(0.0112)^2$. Using our assumption that $1 < N$, it follows that $1(0.0112)^2 \leq n(0.0112)^2$. The last statement just moves around the n term. thus, by the slinky method, $0.112 < (0.0112)^2n$.
 
+Assume $1 \leq n \land 1+0.112n \leq (1+ 0.112)^n$
+\begin{align*}
+  1+0.112(n+1)&= 1+(0.112)n+(0.112)\\
+              &< 1+(0.112)n + (0.112)^2n\\
+              &= 1+(0.112)n+(0.112)n)(0.112)\\
+              &= 1+(0.112)n(1+0.112)\\
+              &< (1+0.112)^n\cdot(1+0.112)\\
+              &= (1+0.112)^{n+1}
+\end{align*}
+First, $1 +0.112(n + 1)$ can be reweitten by distributing 0.112 with $(n+1)$ to get $1 + (0.112)n + (0.112)$. We already proved that $(0.112) < (0.112)^2n$ above, and it follow that $1+(0.112)n+(0.112) < 1+(0.112)n+(0.112)^2n$. we can rearange $1+(0.112)n + (0.112)^2n$ to get $1+(0.112)n+(0.112)n)(0.112)$. You can then factor $(1+0.112)$ out to get $1+(0.112)n(1+0.112)$. Using our asumption that $1+0.112n < (1+0.112)^n$, it follows that $1+(0.112)n(1+0.112) < (1+0.112)^n\cdot(1+0.112)$. this can be further rewritten as $(1+0.112)^{n+1}$ by power rules of algebra. Thus, By the slinky method, The original statement is $True$. $\qed$
+   \newpage 
   \item %2.4
     $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \ \sum\limits_{j=1}^n j= \frac{n(n+1)}{2} \Big )$
 
+\textit{proof}. Choose $n_0 = 1$. We'll show:
+    $$\forall n \in \N \Big( n_0 \leq n \ \Rightarrow \ \sum\limits_{j=1}^n j= \frac{n(n+1)}{2}\Big)$$
+    By the principal of mathmatical induction, to prove this we will first show this statment holds for $n = 1$\\ let $n = 1$
+    \begin{align*}
+      \sum\limits_{j=1}^n j &= \sum\limits_{j=1}^1 j\\
+                            &= 1\\
+                            &= \frac{2}{2}\\
+                            &= \frac{1(1+1)}{2}\\
+                            &= \frac{n(n+1)}{2} \\
+    \end{align*}
+    Thus the statement holds when $n =1$
+    $$\forall n \in \N \Big( n_0 \leq n \ \land \ \sum\limits_{j=1}^n j= \frac{n(n+1)}{2}\Rightarrow z \Big)$$
+Assume $\leq n \ \land \ \sum\limits_{j=1}^n j= \frac{n(n+1)}{2}$
+\begin{align*}
+  \sum\limits_{j=1}^{n+1} j &= \sum\limits_{j=1}^n+(n+1)\\
+                            &= \frac{n(n+1)}{2} + (n+1)\\
+                            &= \frac{n(n+1)+2(n+1)}{2}\\
+                            &= \frac{(n+1)(n+2)}{2}
+\end{align*}
+Thus, the original statement is true by induction.
+\newpage
   \item %2.5
     $\exists n_0 \in \mathbb{N} \ \forall n \in \mathbb{N} \ \Big (n_0 \leq n \ \Rightarrow \ \sum\limits_{k=0}^n z^k = \frac{1-z^{n+1}}{1-z} \Big )$ \textit{for $z \in \mathbb{C}$ and $z \neq 1$}.
+
+\textit{proof}. Choose $n_0 = 0$. We'll show:
+    $$\forall n \in \N \Big( n_0 \leq n \ \Rightarrow \ \sum\limits_{k=0}^n z^k = \frac{1-z^{n+1}}{1-z}\Big)$$
+    By the principal of mathmatical induction, to prove this we will first show this statment holds for $n = 0$\\ let $n = 0$
+    \begin{align*}
+      \sum\limits_{k=0}^n z^k &= z^0\\
+                              &= 1\\
+                              &= \frac{1-z^1}{1-z}\\
+                              &= \frac{1-z^{n+1}}{1-z}.
+    \end{align*}
+    Thus, the statement holds, for $n=0$.
+    $$\forall n \in \N \Big( n_0 \leq n \ \land \ \sum\limits_{k=0}^n z^k = \frac{1-z^{n+1}}{1-z}\Rightarrow \sum\limits_{k=0}^{n+1} z^k = \frac{1-z^{n+2}}{1-z} \Big)$$
+Assume $n_0 \leq n \ \land \ \sum\limits_{k=0}^n z^k = \frac{1-z^{n+1}}{1-z}$
+\begin{align*}
+  \sum\limits_{k=0}^n z^{n+1} &= \sum\limits_{k=0}^n z^k+ z^{n+1} \\
+                              &= \frac{1-z^{n+1}+(1-z)(z^{n+1}}{1-z}\\
+                              &= \frac{a-z^{n+1}+z^{n+1}-z^{n+2}}{1-z} \\
+                              &= \frac{1-z^{n+2}}{1-z}.
+\end{align*}
+Thus, the original statment is True, by induction. 
+
 
 \end{enumerate}   
 
