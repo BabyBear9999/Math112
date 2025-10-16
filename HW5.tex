@@ -1,0 +1,350 @@
+\documentclass[11pt]{article}    
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsmath,amscd}
+\usepackage{amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lmodern}
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray
+}                      
+
+
+%\usepackage{xypic}
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\usepackage{esint}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[none]{hyphenat}
+\setcounter{tocdepth}{3}
+\usepackage{eucal} 
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+\renewcommand{\abstractname}{\vspace{-\baselineskip}}
+
+
+
+
+\textwidth=6in
+\textheight=9in
+\hoffset=-0.375in
+\voffset=-0.75in
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
+\newtheorem{remark}{Remark}
+\newtheorem{claim}{Claim}
+\newtheorem{proposition}{Proposition}[subsection]
+\newtheorem{example}{Example}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{problem}{Problem}[subsection]
+\newtheorem{assumption}{Assumption}[subsection]
+\newtheorem{condition}{Condition}[subsection]
+\newtheorem{introdefinition}{Definition}
+\newtheorem{alternatedefinition}{Alternate Definition}[subsection]
+
+
+\numberwithin{equation}{section}
+
+
+
+
+
+
+\makeatletter
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+\makeatother
+
+
+\newcommand*{\TitleFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{14}{14}%
+      \selectfont}
+\newcommand*{\AuthorFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{12}{12}%
+      \selectfont}
+
+
+
+
+\newcommand{\kbar}
+{\mathchar'26\mkern-9mu k}
+
+\newcommand{\ebar}
+{\mathchar'26\mkern-9mu \theta_0}
+
+\newcommand{\ebarblue}
+{\mathchar'26\mkern-9mu \textcolor{blue}{\theta_0}}
+
+
+
+
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\R}{\mathbb{R}}
+\DeclareMathOperator*{\N}{\mathbb{N}}
+\DeclareMathOperator*{\Q}{\mathbb{Q}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator*{\C}{\mathbb{C}}
+\DeclareMathOperator*{\A}{\mathbb{A}}
+\DeclareMathOperator*{\expp}{\text{exp}}
+\DeclareMathOperator*{\lt}{L_{\bullet}}
+\DeclareMathOperator*{\roc}{\rotatebox[origin=c]{180}{c}}
+\DeclareMathOperator*{\rok}{\rotatebox[origin=c]{180}{$k$}}
+\DeclareMathOperator*{\boldv}{\boldsymbol{v}}
+\DeclareMathOperator*{\hbarbrown}{\textcolor{brown}{\hbar}}
+\DeclareMathOperator*{\e}{\textcolor{purple}{\theta_0_1}}
+\DeclareMathOperator*{\ee}{\textcolor{purple}{\theta_0_2}}
+\DeclareMathOperator*{\ered}{\textcolor{red}{--\theta_0_1 \theta_0_2}}
+\DeclareMathOperator*{\eblue}{\textcolor{blue}{\theta_0_1 + \theta_0_2}}
+\DeclareMathOperator*{\eebrown}{\textcolor{brown}{-- \theta_0}}
+\DeclareMathOperator*{\ebrown}{\textcolor{brown}{\theta_0}}
+\DeclareMathOperator*{\eebrownlevel}{\textcolor{brown}{\theta_0^2}}
+\DeclareMathOperator*{\tealN}{\textit{\textcolor{teal}{N}}}
+\DeclareMathOperator*{\bluenoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\pinknoise}{\boldsymbol{\Psi}_{\mathbb{T}}}
+\DeclareMathOperator*{\uniform}{\boldsymbol{\rho}_{\star | \mathbb{T}}}
+\DeclareMathOperator*{\vcurrent}{\widehat{\textit{\textbf{v}}}}
+\newcommand{\dbar}
+{\mathchar'26\mkern-9mu \theta_0}
+ \setcounter{section}{0}
+
+%my custom stuff
+ \newtheorem{bprob}{$\square$ Problem}
+ \usepackage{enumitem}
+   %field symbols
+   \DeclareMathOperator*{\OO}{\mathbb{O}}
+   \DeclareMathOperator*{\II}{\mathbb{I}}
+   \DeclareMathOperator*{\+}{\oplus}
+   \DeclareMathOperator*{\x}{\otimes}
+   \DeclareMathOperator*{\fl}{\prec} %fancy <
+   \DeclareMathOperator*{\fg}{\succ} %fancy >
+   \DeclareMathOperator*{\Lra}{\Leftrightarrow}
+   \DeclareMathOperator*{\lra}{\leftrightarrow}
+   %{enumerate}[label= 1.\arabic*, itemsep=0.2cm]
+
+ 
+\begin{document}
+
+
+
+\hypersetup{linkcolor=black}
+
+\begin{center} 
+\textbf{{MATH 112: \underline{Introduction to Analysis}}}\\
+\textbf{{Fall 2024 Semester}}\\
+\textbf{{Homework \textcolor{black}{5}: Due \textcolor{black}{Tuesday} \textcolor{black}{October} \textcolor{black}{14}, 10:00am PST}}\\
+ \end{center}
+
+ \iffalse
+ \noindent \textbf{Instructions}
+ \begin{itemize}
+   \setlength\parskip{0pt}
+ \itemsep0em
+ \item Write your full name, ``Homework \textcolor{black}{5}'', and the date at the top of the first page.
+ \item Show all work and explain your reasoning.  Write in complete sentences.
+ \item Typeset your solutions in LaTeX.
+  \item Each question has multiple parts. \textcolor{purple}{*\textit{New: restate each subquestion above your work}*}.
+ \item \underline{Submit a single .pdf file to Gradescope under the assignment ``Homework \textcolor{black}{5}''.}
+ \item \underline{You must use Gradescope to electronically match problems to pages in your .pdf}
+ \item Questions? Email me or come to office hours.
+ \item You are strongly encouraged to work together!  Just write up your own solutions.
+ \end{itemize}
+\fi 
+ 
+ \medskip
+ \noindent \textbf{Assignment} (2 Problems: 50 + 50 = 100 points total.) \medskip
+ 
+   \noindent $\square$ \textbf{Problem 1}  [\textsf{Ordered Fields and Averages}] Let $(F, \preccurlyeq,  \oplus , \mathbb{O}, \otimes, \mathbb{I})$ be an ordered field, i.e. a set $F$ that is both a field $(F, \oplus, \mathbb{O}, \otimes, \mathbb{I})$ satisfying the 10 field axioms from \textsf{L7} and an ordered set $(F, \preccurlyeq)$ with a compatible total order $\preccurlyeq$ on $F$ satisfying the 4 ordered field axioms from \textsf{L11}. Prove each of the following propositions.  Indicate which axioms you use in each step.
+   \begin{itemize}
+  \itemsep0em 
+   \item 1.1 [10 points] $\forall x \in F \ \forall y \in F \ \forall c  \in F \ \Big ( (x \prec y \ \land \ c \prec \mathbb{O}) \ \Rightarrow \ c \otimes x \succ c \otimes y \Big ) $\\
+   \indent \ \ \ \ \  \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \textit{Note: recall from \textnormal{\textsf{L9}} that ``$a \succ b$'' means the same thing as ``$b \prec a$''.}
+   \item 1.2 [10 points] $\forall x \in F \ (x \neq \mathbb{O} \ \Rightarrow \ \mathbb{O} \prec x^2 )$.  \textit{Recall from \textnormal{\textsf{L8}}: for all $x \in F$, $x^2 = x \otimes x$.}
+ \item 1.3 [10 points] $- \mathbb{I} \prec \mathbb{O} \prec \mathbb{I}$.  \ \ \ \ \ \ \textit{Recall from \textnormal{\textsf{L7}}: $-x$ is the additive inverse of $x \in F$.}
+      \item 1.4 [10 points] $\exists g \in F \ (\mathbb{I} \oplus \mathbb{I} ) \otimes g = \mathbb{I}$.
+   \item 1.5 [10 points] $\forall x \in F \ \forall y \in F \ \Big ( (x \prec y) \Rightarrow (x \prec g \otimes ({x \oplus y}) \prec y) \Big )$ where the element\\    \indent \ \ \ \ \  \ \ \ \ \ \ \ \  \ \ \ \ \ \ \  $g \in F$ is the one you proved exists in the previous Problem 1.4.
+   \end{itemize}
+  %problem 1: 
+
+   \begin{enumerate}[label= 1.\arabic*, itemsep=0.2cm]
+     \item %1.1
+       $\forall x \in F \ \forall y \in F \ \forall c  \in F \ \Big ( (x \fl y \ \land \ c \fl \OO) \ \Rightarrow \ c \x x \fg c \x y \Big ) $\\
+       \iffalse 
+       First: prove $(-a)\x b = - (a \x b)$.\\
+       $-(a \x b)$ is additive inverse of $(a \x b)$. we know that by axiom 4, $-(a \x b) \+ (a \x b) = \OO$, 
+       \begin{align*}
+         ((-a) \x b) \+ (a \x b) &= b \x (-a \+ a)  \\ %# 4 
+                                 &=  b \x \OO \\ %#9
+                                 &= \OO %HW 4 1.2
+       \end{align*}
+        since both equal $\OO$, blah blah\\
+      \fi
+Assume $x \fl y \land c \fl \OO$. By the hypothetical strategy, if we can prove that \\ $c \x x \fg c \x y$, under this assumption, then the original statement is true. Start from our assumption.
+       \begin{align*}
+          &\Lra& x &\fl \ y \\ 
+         &\Lra& (-c)\x x &\fl\ (-c) \x y \\%#4 & 14
+          &\Lra& (c \x x) \+ ((-c) \x x) &\fl\ (c\x x) \+((-c)\x y) \\%#4 &13
+          &\Lra& (c \+ (-c))\x x &\fl\ (c\x x) \+((-c)\x y) \\%#9
+          &\Lra& \OO \x x &\fl\ (c\x x) \+((-c)\x y) \\%#4
+        &\Lra&\OO &\fl\ (c\x c)\+((-c)\x y)\\%#Hw 4 1.2
+        &\Lra& \OO \+ (c \x y) &\fl\ (c \x x) \+ ((-c) \x y))\+(c\x y) \\ %#13 
+        &\Lra& \OO \+ (c\x y) &\fl\ (c \x x) \+ (y \x ((-c) \+ c)) \\ %#9
+        &\Lra& \OO \+ (c\x y) &\fl\ (c \x x) \+ (y \x \OO) \\ %#4
+        &\Lra& \OO \+ (c\x y) &\fl\ (c \x x) \+ \OO \\ %#by HW 4 p1.2 
+           &\Lra& c \x y &\fl c \x x \\%#3 
+        &\Lra& c \x x &\fg c \x y %L8 
+       \end{align*}
+       Using Axiom 14 we know that we can $\x$ any value to both sides, as long as it is greater than $\OO$. Since we have asusmed $c \fl \OO$, by axiom 4, $(-c) \fg \OO$ since $c \+ (-c) = \OO$. Next use axiom 14, which tells us we can $\+$ any element to both sides without affecting $\fl$ adding $(c \x x)$. Use Axiom 9, to distribute $\x$ over $\+$, on the left side which gets us $c \+ (-c) \x x)$. Then use axiom 4 to get that $(c \+ (-c))= \OO$. After this, use Hw 4, problem 1.2 to get $\OO \x x = \OO$. Use axiom $13$ to $\+ (c\x y)$ to  both sides. Use axiom 1 to group $(c \x x) \+ ((-c) \x y) \+ (x \x y)$ together, then use axiom 9 to distribute $\x$ over $\+$, to get: $y \x ((-c) \+ c)$. Use axiom 4, to get $(-c)\+ c) = \OO$. Use Hw 4, problem 1.2 to get $y \x \OO = \OO$. Use axiom 3, that any value plus $\OO$ equals itself to get: $(c \x x)$. Lastly use what we learned in L8, that you can flip $\fl$ to $\fg$ if you switch the terms sides as well. 
+       
+        
+     \newpage
+     \item %1.2
+     $\forall x \in F \ (x \neq \mathbb{O} \ \Rightarrow \ \mathbb{O} \prec x^2 )$. \\
+      EXPLANATION\\
+      Assume $x \neq \OO$, means either $x < \OO$ or $x > \OO$.\\
+      Case 1: $x < \OO$
+      \begin{align*}
+        &\Lra& x \fl& \OO \\ 
+        &\Lra& x\x (-x) \fl&  \OO \x (-x) \\ %ax 4 and ax 4
+        &\Lra& x \x (-x)  \fl& \OO \\ %by Hw 4 p 1.2
+        &\Lra& (x \x x) \+ (x \x (-x)) \fl& (x \x x) \+ \OO \\%by ax13
+        &\Lra& x \x (x \+ (-x)) \fl& (x \x x) \+ \OO \\ %by ax 9
+        &\Lra& x \x \OO \fl& (x \x x) \+ \OO \\ %by ax 4
+        &\Lra& \OO \fl& (x \x x) \+ \OO \\ %by Hw
+        &\Lra& \OO \fl& (x \x x) \\ % by ax 3
+        &\Lra& \OO \fl& x^2 %by L8
+      \end{align*}
+      EXPLANATION.\\
+      Case 2: $x > \OO$
+      \begin{align*}
+        && x \fl& \OO \\
+        &\Lra& x \x x \fl& \OO \x x \\ %by ax 4 since x is pos
+        &\Lra& x \x x \fl& \OO \\ % vy hw 4 problem 1.2
+        &\Lra& x^2 \OO \\%by L8
+      \end{align*}
+      EXPLANATION
+      \smallskip\\
+      Since this statement \_\_\_, holds for both possible cases and these the only possible cases that statisgy $x \neq \OO$, the orignal statment is True. 
+
+     \item %1.3
+      $- \mathbb{I} \prec \mathbb{O} \prec \mathbb{I}$.\\
+      EXPLANATION\\
+      by axiom 10, we have: $\OO \neq \II$ 
+      \begin{align*}
+       &&  \OO \neq& \II \\
+       &&   \OO \fl& {\II}^2 \\ %by problem 1.2
+       &\Lra& \OO \fl& \II \x \II \\%by L8
+       &\Lra& \OO \fl& \II %by ax 7
+      \end{align*}
+      We now know that $\OO \fl \II$, use to show $-\II \fl \OO$.
+      \begin{align*}
+        && \OO \fl& \II \\
+        &\Lra& (-\II)\+\OO \fl&(-\II) \+ \II \\ %by ax 13 & 4
+        &\Lra& (-\II)\+\OO \fl& \OO \\%by ax 4
+        &\Lra& -\II \fl& \OO %by ax 3
+      \end{align*}
+
+
+     \item %1.4
+       $\exists g \in F \ (\mathbb{I} \oplus \mathbb{I} ) \otimes g = \mathbb{I}$.\\
+      Let $g = (\II \+ \II)^{-1}$. 
+      Substitute g into the equation.
+      \begin{align*}
+        (\II \+ \II) \x g &= (\II \x \II ) \x (\II \+ \II)^{-1}\\%by ax 8
+                          &= \II \\%ax 8.
+      \end{align*}
+      EXPLANATION      
+     \item %1.5
+      $\forall x \in F \ \forall y \in F \ \Big ( (x \prec y) \Rightarrow (x \prec g \otimes ({x \oplus y}) \prec y) \Big )$\\
+      Assume $x \fl y$, let $g = (\II \+ \II)^{-1}$.\\
+      First show: $x \fl y \Rightarrow x \fl g \x (x \+ y )$
+      \begin{align*}
+        && x \fl& y \\
+        &\Lra& x \+ x \fl& x \+ y \\ % by ax 13
+        &\Lra& (x \x \II ) \+ (x \x \II) \fl& x \+ y \\ %by ax 7
+        &\Lra& x \x (\II \+ ]II) \fl& x \+ y \\ %by ax 9
+        &\Lra& (\II \+ \II) \x x \fl& x \+ y \\ %by ax 6
+        &\Lra& (\II \+ \II) \x x \fl& (\II \+ \II)^{-1} ]x (x \+ y) \\ % by ax 8 and by ax 14, since \II > \OO, \II is pos, so (\II \x \II) is pos so (\II \x \II)^{-1} is pos.
+        &\Lra& \II \x x \fl& (\II \x \II)^{-1} \x (x \x Y) \\ % by ax 14
+        &\Lra& x \fl& (\II \x \II)^{-1} \x (x \x y) \\ % by ax 9
+        &\Lra& x \fl& g \x (x \x y) %by choice of g
+      \end{align*}
+      EXPLANATION\\
+Next show: $x \fl y \Rightarrow g \x (x \x y)$
+\begin{align*}
+  && x \fl& y \\
+  &\Lra& x \+ y \fl& y \+ y \\ % by ax 13
+  &\Lra& x \+ y \fl& (y \x \II)\+ (y \x \II) \\ % by ax 7
+  &\Lra& x \+ y \fl& y \x (\II \+ \II) \\ % by ax 9
+  &\Lra& (x \+ y) \x (\II \+ \II)^{-1} \fl& y \x (\II \+ \II) \x (\II \x \II)^{-1} \\ % by ax 7
+  &\Lra& (x \+ y) \x (\II \+ \II)^{-1} \fl& y \x ((\II \+ \II) \x (\II \x \II)^{-1}) \\ % by ax ?
+  &\Lra& (x \+ y) \x (\II \+ \II)^{-1} \fl& y \x \II \\ % by ax 8
+  &\Lra& (x \+ y) \x (\II \+ \II)^{-1} \fl& y  \\ % by ax 7
+\end{align*}
+     EXPLANATION\\ 
+MORE EXPLANATION Since we have $a\fl b \land b \fl c$. by axiom 11, this implies we have $a \fl c$. furthermore we have $a\fl b\fl c$.
+
+
+
+   \end{enumerate}
+
+
+\newpage
+    \noindent $\square$ \textbf{Problem 2}  [\textsf{Optimal Bounds of Intervals in the Continuum}] Recall from \textsf{L9} that in any totally ordered set $(S, \preceq)$, if $A \subseteq S$ is a subset, we say that $u_{\star} = \sup S$ is an optimal upper bound of $A$ in $S$ if (i) $u_{\star}$ is an upper bound for $A$ in $(S, \preceq)$ and (ii) any upper bound $u$ of $A$ satisfies $u_{\star} \preceq u$.  In \textsf{L9}, we saw that special subsets of $S$ are the closed and open intervals $$[a,b]_S := \Big \{ x \in S \ : \ a \preceq x \preceq b \Big \}$$
+    $$(a,b)_S := \Big \{ x \in S \ : \ a \prec x \prec b \Big \}.$$
+    
+              \begin{itemize} 
+   \itemsep0em 
+ \item 2.1 [25 points] \ Prove that $\sup [111,112]_{\mathbb{R}} = 112$.
+   
+ \item 2.2 [25 points] \ Prove that $\sup (111,112)_{\mathbb{R}} = 112$.
+\end{itemize}
+
+  \begin{enumerate}[label= 2.\arabic*, itemsep=0.2cm]
+    \item %2.1
+      Prove that $\sup [111,112]_{\mathbb{R}} = 112$.\\
+      We are given, in l9 and in the begining of this problem, that:  
+      $$[a,b]_S := \Big \{ x \in S \ : \ a \preceq x \preceq b \Big \}.$$ 
+      Thus: 
+      $$[112,112]_{\R} := \Big \{ x\in \R :\ 112 \preceq x \preceq 112 \Big \}.$$ 
+      To prove that $\sup [111,112]_{\mathbb{R}} = 112$, we will first show that 112 is an upper bound for $[111,112]_{\mathbb{R}}$.
+      Recall that, from L9, the definition: an upper bound for $A$ in $S$ is an element $u \in S$ so $\forall \alpha \in A \ \alpha \leq u$. 
+      To prove that 112 is an upper bound, it is sufficent to show that $\forall x \in \R \ x \preceq 112$.
+      
+    \item %2.2
+      Prove that $\sup (111,112)_{\mathbb{R}} = 112$.\\
+      We are given, in l9 and in the begining of this problem, that:  
+      $$(a,b)_S := \Big \{ x \in S \ : \ a \fl x \fl b \Big \}.$$ 
+      Thus: 
+      $$(112,112)_{\R} := \Big \{ x\in \R :\ 111 \fl x  \fl 112\Big \}.$$ 
+      To prove that $\sup [111,112]_{\mathbb{R}} = 112$, we will first show that 112 is an upper bound for $[111,112]_{\mathbb{R}}$.
+      Recall that, from L9, the definition: an upper bound for $A$ in $S$ is an element $u \in S$ so $\forall \alpha \in A \ \alpha \leq u$. 
+      To prove that 112 is an upper bound, it is sufficent to show that $\forall x \in \R \ x \preceq 112$.
+      
+
+   \end{enumerate}
+
+
+  
+
+    
+\noindent $\square$ \textbf{Bonus} [X points] Despite our proofs in \textsf{L6} that the set of rational numbers $\mathbb{Q}$ is countably infinite and the set of irrational numbers $\mathbb{R} \setminus \mathbb{Q}$ is uncountably infinite, prove that\\
+\indent \ (i) between any two rational numbers there is an irrational number\\
+\indent (ii) between any two irrational numbers there is a rational number.
+
+
+
+
+ \end{document}
